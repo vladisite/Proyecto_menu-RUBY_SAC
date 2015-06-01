@@ -42,6 +42,6 @@ class LocalsController < ApplicationController
     end
 
     def local_params
-      params.require(:local).permit(:description, :address, :phone, :order_status_id)
+      params.require(:local).permit(:description, :address, :phone)
     end
 end

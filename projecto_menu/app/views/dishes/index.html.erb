@@ -1,12 +1,12 @@
-<h1>Listing dishes</h1>
+<h1>Lista de Platos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Status</th>
+      <th>Descripcion</th>
+      <th>Tipo de Plato</th>
       <th>Local</th>
-      <th>Dishes type</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +15,12 @@
     <% @dishes.each do |dish| %>
       <tr>
         <td><%= dish.description %></td>
+        <td><%= dish.dishes_type.description %></td>
+        <td><%= dish.local.description %></td>
         <td><%= dish.status %></td>
-        <td><%= dish.local %></td>
-        <td><%= dish.dishes_type %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', dish %></td>
+        <td><%= link_to 'Editar', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Eliminar', dish, method: :delete, data: { confirm: 'Está Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Dish', new_dish_path %>
+<%= link_to 'Nuevo Plato', new_dish_path %>

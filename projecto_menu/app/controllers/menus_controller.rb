@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   respond_to :html
 
   def index
@@ -42,6 +43,6 @@ class MenusController < ApplicationController
     end
 
     def menu_params
-      params.require(:menu).permit(:date_menu, :stock, :price, :date_register, :order_status_id, :local_id, :week_id, :dishes_id)
+      params.require(:menu).permit(:date_menu, :stock, :price, :status, :user_id, :local_id, :week_id, :dish_id)
     end
 end

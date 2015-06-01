@@ -18,7 +18,7 @@ class WeeksControllerTest < ActionController::TestCase
 
   test "should create week" do
     assert_difference('Week.count') do
-      post :create, week: { date_fina: @week.date_fina, date_inic: @week.date_inic, name: @week.name, order_status_id: @week.order_status_id }
+      post :create, week: { date_fini: @week.date_fini, date_inic: @week.date_inic, name: @week.name, status: @week.status }
     end
 
     assert_redirected_to week_path(assigns(:week))
@@ -35,7 +35,7 @@ class WeeksControllerTest < ActionController::TestCase
   end
 
   test "should update week" do
-    patch :update, id: @week, week: { date_fina: @week.date_fina, date_inic: @week.date_inic, name: @week.name, order_status_id: @week.order_status_id }
+    patch :update, id: @week, week: { date_fini: @week.date_fini, date_inic: @week.date_inic, name: @week.name, status: @week.status }
     assert_redirected_to week_path(assigns(:week))
   end
 

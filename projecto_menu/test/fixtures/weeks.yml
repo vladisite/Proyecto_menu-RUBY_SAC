@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  date_inic: 2015-06-01
-  date_fina: 2015-06-01
-  order_status_id: 
+  date_inic: 2015-06-01 18:07:39
+  date_fini: 2015-06-01 18:07:39
+  status: false
 
 two:
   name: MyString
-  date_inic: 2015-06-01
-  date_fina: 2015-06-01
-  order_status_id: 
+  date_inic: 2015-06-01 18:07:39
+  date_fini: 2015-06-01 18:07:39
+  status: false

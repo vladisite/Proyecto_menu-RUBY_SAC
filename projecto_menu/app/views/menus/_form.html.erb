@@ -1,49 +1,22 @@
-<%= form_for(@menu) do |f| %>
-  <% if @menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+<%= simple_form_for(@menu) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @menu.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :stock, :input_html => {:maxlength =>50, :style=> 'width: 100px'} %>
+    <%= f.input :price, :input_html => {:maxlength =>50, :style=> 'width: 100px'}  %>
+    <%= f.input :status %>
+    <%= f.association :user, label_method: :description, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 200px'} %>
+    <%= f.association :local, label_method: :description, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 230px'} %>
+    <%= f.association :week, label_method: :name, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 180px'} %>
+     <label>Fecha del menu</label><br />
+    <%= f.date_field :date_menu, :input_html => {:maxlength =>50, :style=> 'width: 100px'} %>
+    <%= f.association :dish, label_method: :description, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 220px'} %>
+  </div>
+  
+   
+ 
 
-  <div class="field">
-    <%= f.label :date_menu %><br>
-    <%= f.date_select :date_menu %>
-  </div>
-  <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :date_register %><br>
-    <%= f.date_select :date_register %>
-  </div>
-  <div class="field">
-    <%= f.label :order_status_id %><br>
-    <%= f.text_field :order_status_id %>
-  </div>
-  <div class="field">
-    <%= f.label :local_id %><br>
-    <%= f.text_field :local_id %>
-  </div>
-  <div class="field">
-    <%= f.label :week_id %><br>
-    <%= f.text_field :week_id %>
-  </div>
-  <div class="field">
-    <%= f.label :dishes_id %><br>
-    <%= f.text_field :dishes_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

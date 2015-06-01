@@ -1,6 +1,7 @@
 class WeeksController < ApplicationController
   before_action :set_week, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   respond_to :html
 
   def index
@@ -42,6 +43,6 @@ class WeeksController < ApplicationController
     end
 
     def week_params
-      params.require(:week).permit(:name, :date_inic, :date_fina, :order_status_id)
+      params.require(:week).permit(:name, :date_inic, :date_fini, :status)
     end
 end

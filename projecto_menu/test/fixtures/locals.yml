@@ -4,10 +4,8 @@ one:
   description: MyString
   address: MyString
   phone: MyString
-  order_status_id: 
 
 two:
   description: MyString
   address: MyString
   phone: MyString
-  order_status_id: 

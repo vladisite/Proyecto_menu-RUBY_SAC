@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601163401) do
+ActiveRecord::Schema.define(version: 20150601190651) do
 
   create_table "dishes", force: true do |t|
     t.text     "description"
@@ -35,29 +35,26 @@ ActiveRecord::Schema.define(version: 20150601163401) do
     t.string   "description"
     t.string   "address"
     t.string   "phone"
-    t.integer  "order_status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "locals", ["order_status_id"], name: "index_locals_on_order_status_id", using: :btree
 
   create_table "menus", force: true do |t|
-    t.date     "date_menu"
+    t.datetime "date_menu"
     t.integer  "stock"
-    t.decimal  "price",           precision: 10, scale: 0
-    t.date     "date_register"
-    t.integer  "order_status_id"
+    t.decimal  "price",      precision: 10, scale: 0
+    t.boolean  "status"
+    t.integer  "user_id"
     t.integer  "local_id"
     t.integer  "week_id"
-    t.integer  "dishes_id"
+    t.integer  "dish_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "menus", ["dishes_id"], name: "index_menus_on_dishes_id", using: :btree
+  add_index "menus", ["dish_id"], name: "index_menus_on_dish_id", using: :btree
   add_index "menus", ["local_id"], name: "index_menus_on_local_id", using: :btree
-  add_index "menus", ["order_status_id"], name: "index_menus_on_order_status_id", using: :btree
+  add_index "menus", ["user_id"], name: "index_menus_on_user_id", using: :btree
   add_index "menus", ["week_id"], name: "index_menus_on_week_id", using: :btree
 
   create_table "order_details", force: true do |t|
@@ -132,13 +129,11 @@ ActiveRecord::Schema.define(version: 20150601163401) do
 
   create_table "weeks", force: true do |t|
     t.string   "name"
-    t.date     "date_inic"
-    t.date     "date_fina"
-    t.integer  "order_status_id"
+    t.datetime "date_inic"
+    t.datetime "date_fini"
+    t.boolean  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "weeks", ["order_status_id"], name: "index_weeks_on_order_status_id", using: :btree
 
 end

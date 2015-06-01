@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :menus
+
+  resources :weeks
+
+  resources :locals
+
   resources :dishes
 
   resources :profiles
@@ -10,13 +16,7 @@ Rails.application.routes.draw do
 
   resources :order_headers
 
-  resources :menus
-
-  resources :locals
-
   resources :dishes_types
-
-  resources :weeks
 
   resources :order_statuses
 

@@ -1,6 +1,6 @@
-<h1>Listing dishes_types</h1>
+<h1>Listado de tipos de plato</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Description</th>
@@ -12,9 +12,9 @@
     <% @dishes_types.each do |dishes_type| %>
       <tr>
         <td><%= dishes_type.description %></td>
-        <td><%= link_to 'Show', dishes_type %></td>
-        <td><%= link_to 'Edit', edit_dishes_type_path(dishes_type) %></td>
-        <td><%= link_to 'Destroy', dishes_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', dishes_type %></td>
+        <td><%= link_to 'Editar', edit_dishes_type_path(dishes_type) %></td>
+        <td><%= link_to 'Eliminar', dishes_type, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Dishes type', new_dishes_type_path %>
+<%= link_to 'Agregar nuevo', new_dishes_type_path %>
