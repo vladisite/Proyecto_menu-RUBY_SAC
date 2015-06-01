@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  resources :order_details
+
+  resources :order_headers
+
+  resources :menus
+
+  resources :dishes
+
+  resources :locals
+
+  resources :dishes_types
+
+  resources :weeks
+
+  resources :order_statuses
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

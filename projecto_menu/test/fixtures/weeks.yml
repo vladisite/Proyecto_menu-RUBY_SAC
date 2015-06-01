@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_inic: 2015-06-01
+  date_fina: 2015-06-01
+  order_status_id: 
+
+two:
+  name: MyString
+  date_inic: 2015-06-01
+  date_fina: 2015-06-01
+  order_status_id: 

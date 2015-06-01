@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  dishes_type_id: 
+  local_id: 
+  order_status_id: 
+
+two:
+  description: MyString
+  dishes_type_id: 
+  local_id: 
+  order_status_id: 

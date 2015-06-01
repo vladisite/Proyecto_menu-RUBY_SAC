@@ -83,12 +83,9 @@ GEM
     minitest (5.7.0)
     multi_json (1.11.0)
     mysql2 (0.3.18)
-<<<<<<< HEAD
     nested_form (0.3.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-=======
->>>>>>> 751b0fa73930c44603b82b8ca88845b266e4b7ef
     orm_adapter (0.5.0)
     rack (1.5.3)
     rack-pjax (0.8.0)
@@ -129,15 +126,10 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     ref (1.0.5)
-<<<<<<< HEAD
     remotipart (1.2.1)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     safe_yaml (1.0.4)
-=======
-    responders (1.1.2)
-      railties (>= 3.2, < 4.2)
->>>>>>> 751b0fa73930c44603b82b8ca88845b266e4b7ef
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -187,11 +179,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   coffee-rails (~> 4.0.0)
-<<<<<<< HEAD
   devise
-=======
-  devise (= 3.5.1)
->>>>>>> 751b0fa73930c44603b82b8ca88845b266e4b7ef
   jbuilder (~> 2.0)
   jquery-rails
   less-rails
