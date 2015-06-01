@@ -18,7 +18,7 @@ class ProfilesControllerTest < ActionController::TestCase
 
   test "should create profile" do
     assert_difference('Profile.count') do
-      post :create, profile: { name: @profile.name, status: @profile.status, user_id: @profile.user_id }
+      post :create, profile: { name: @profile.name, status: @profile.status }
     end
 
     assert_redirected_to profile_path(assigns(:profile))
@@ -35,7 +35,7 @@ class ProfilesControllerTest < ActionController::TestCase
   end
 
   test "should update profile" do
-    patch :update, id: @profile, profile: { name: @profile.name, status: @profile.status, user_id: @profile.user_id }
+    patch :update, id: @profile, profile: { name: @profile.name, status: @profile.status }
     assert_redirected_to profile_path(assigns(:profile))
   end
 

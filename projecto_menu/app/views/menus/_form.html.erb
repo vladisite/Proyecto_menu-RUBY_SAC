@@ -3,9 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :stock, :input_html => {:maxlength =>50, :style=> 'width: 100px'} %>
-    <%= f.input :price, :input_html => {:maxlength =>50, :style=> 'width: 100px'}  %>
+    <%= f.input :price, :input_html => {:maxlength =>50, :style=> 'width: 100px', :precision => 8, :scale => 2}  %>
     <%= f.input :status %>
-    <%= f.association :user, label_method: :description, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 200px'} %>
+    <%= f.association :user, label_method: :name, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 200px'} %>
     <%= f.association :local, label_method: :description, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 230px'} %>
     <%= f.association :week, label_method: :name, value_method: :id, :input_html => {:maxlength =>50, :style=> 'width: 180px'} %>
      <label>Fecha del menu</label><br />

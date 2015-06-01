@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :profiles
+
   resources :menus
 
   resources :weeks
@@ -6,8 +9,6 @@ Rails.application.routes.draw do
   resources :locals
 
   resources :dishes
-
-  resources :profiles
 
   devise_for :users
   #get 'home/index'
@@ -19,7 +20,8 @@ Rails.application.routes.draw do
   resources :dishes_types
 
   resources :order_statuses
-
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

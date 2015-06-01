@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601190651) do
+ActiveRecord::Schema.define(version: 20150601212232) do
 
   create_table "dishes", force: true do |t|
     t.text     "description"
@@ -94,12 +94,9 @@ ActiveRecord::Schema.define(version: 20150601190651) do
   create_table "profiles", force: true do |t|
     t.string   "name"
     t.boolean  "status"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -122,9 +119,11 @@ ActiveRecord::Schema.define(version: 20150601190651) do
     t.string   "telephone"
     t.datetime "date_of_birth"
     t.boolean  "status",                 default: false
+    t.integer  "profile_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "weeks", force: true do |t|

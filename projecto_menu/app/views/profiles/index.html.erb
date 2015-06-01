@@ -1,11 +1,10 @@
-<h1>Lista de perfiles</h1>
+<h1>Listing profiles</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
+      <th>Descripcion</th>
       <th>Estado</th>
-      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +14,9 @@
       <tr>
         <td><%= profile.name %></td>
         <td><%= profile.status %></td>
-        <td><%= profile.user %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', profile %></td>
+        <td><%= link_to 'Editar', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Eliminar', profile, method: :delete, data: { confirm: 'Está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+<%= link_to 'Nuevo Perfil de Usuario', new_profile_path %>
