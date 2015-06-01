@@ -11,29 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601035453) do
+ActiveRecord::Schema.define(version: 20150601163401) do
 
   create_table "dishes", force: true do |t|
-    t.string   "description"
-    t.integer  "dishes_type_id"
+    t.text     "description"
+    t.boolean  "status"
     t.integer  "local_id"
-    t.integer  "order_status_id"
+    t.integer  "dishes_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "dishes", ["dishes_type_id"], name: "index_dishes_on_dishes_type_id", using: :btree
   add_index "dishes", ["local_id"], name: "index_dishes_on_local_id", using: :btree
-  add_index "dishes", ["order_status_id"], name: "index_dishes_on_order_status_id", using: :btree
 
   create_table "dishes_types", force: true do |t|
     t.string   "description"
-    t.integer  "order_status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "dishes_types", ["order_status_id"], name: "index_dishes_types_on_order_status_id", using: :btree
 
   create_table "locals", force: true do |t|
     t.string   "description"
@@ -97,6 +93,16 @@ ActiveRecord::Schema.define(version: 20150601035453) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :dishes
+
+  resources :profiles
+
   devise_for :users
   #get 'home/index'
 
@@ -7,8 +11,6 @@ Rails.application.routes.draw do
   resources :order_headers
 
   resources :menus
-
-  resources :dishes
 
   resources :locals
 

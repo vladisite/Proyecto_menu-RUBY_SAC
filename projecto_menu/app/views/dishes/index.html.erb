@@ -4,9 +4,9 @@
   <thead>
     <tr>
       <th>Description</th>
-      <th>Dishes type</th>
+      <th>Status</th>
       <th>Local</th>
-      <th>Order status</th>
+      <th>Dishes type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
     <% @dishes.each do |dish| %>
       <tr>
         <td><%= dish.description %></td>
-        <td><%= dish.dishes_type %></td>
+        <td><%= dish.status %></td>
         <td><%= dish.local %></td>
-        <td><%= dish.order_status %></td>
+        <td><%= dish.dishes_type %></td>
         <td><%= link_to 'Show', dish %></td>
         <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
         <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
