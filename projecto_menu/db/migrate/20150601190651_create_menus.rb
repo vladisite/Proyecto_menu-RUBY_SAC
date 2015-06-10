@@ -9,7 +9,6 @@ class CreateMenus < ActiveRecord::Migration
       t.references :local, index: true
       t.references :week, index: true
       t.references :dish, index: true
-
       t.timestamps
     end
   end

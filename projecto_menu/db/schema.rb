@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20150601212232) do
 
   create_table "order_details", force: true do |t|
     t.integer  "cant_dishes"
+    t.decimal  "price",            precision: 10, scale: 0
+    t.decimal  "amount",           precision: 10, scale: 0
     t.integer  "order_headers_id"
     t.datetime "created_at"
     t.datetime "updated_at"
